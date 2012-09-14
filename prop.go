@@ -49,8 +49,8 @@ func Load(propPath string) (prop map[string]string, err error) {
 			break
 		}
 		equalIndex := strings.Index(line, "=")
-		key := string(line[0:equalIndex])
-		value := string(line[equalIndex+1:])
+		key := strings.TrimSpace(string(line[0:equalIndex]))
+		value := strings.TrimSpace(string(line[equalIndex+1:]))
 		if key == "" || value == "" {
 			err = errors.New("invalid format at line " + strconv.Itoa(equalNum))
 		}
