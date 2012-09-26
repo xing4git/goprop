@@ -1,6 +1,8 @@
-/**
- * Package prop attempts to provider a similar usage with Properties in java.
- */
+// package prop attempts to provide a similar usage with Properties in java.
+// the line starts with '#' is a comment.
+// blank line is allowed.
+// otherwise, the line should contain only one "=", and the words before "=" become key, the words after "=" become value.
+// key and value will be trimed, after trimming, if key or value equals "", it's invalid.
 package prop
 
 import (
@@ -12,9 +14,7 @@ import (
 	"strconv"
 )
 
-/**
- * Load loads properties from propPath
- */
+// Load loads properties from propPath.
 func Load(propPath string) (map[string]string, error) {
 	prop := make(map[string]string)
 	file, err := os.Open(propPath)
